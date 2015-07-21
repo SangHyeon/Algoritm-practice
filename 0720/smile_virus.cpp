@@ -13,7 +13,6 @@ struct data {
     int level;
 };
 data q1[100001];
-int q2[1];
 int f1=0,r1=0;
 
 void eq1(data n) {
