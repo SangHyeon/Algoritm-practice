@@ -35,7 +35,7 @@ void my_strcpy(char* s1, char* s2) {
     *(s1+len2) = 0;
 }
 
-//equal = 0, not 1
+//equal = 1, not 0
 int my_strcmp(char* s1, char* s2) {
     int len1 = my_strlen(s1);
     int len2 = my_strlen(s2);
