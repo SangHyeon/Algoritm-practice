@@ -18,13 +18,9 @@ int main() {
     ta = t1*a + t2*c;
     tb = lcm;
 
-    while(1) {
-        int temp = gcd(ta, tb);
-        if(temp == 1)
-            break;
-        ta /= temp;
-        tb /= temp;
-    }
+    int temp = gcd(ta, tb);
+    ta /= temp;
+    tb /= temp;
 
     cout<<ta<<" "<<tb<<endl;
 
