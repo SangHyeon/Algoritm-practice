@@ -1,6 +1,6 @@
 ###just practice Algoritm & Data Structure
 
-#After 2015-03- file name is beakjoon problem nember
+#After 2015-03- file name is beakjoon problem number
 
 #0713 - miro.cpp
 input
