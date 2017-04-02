@@ -41,7 +41,7 @@ int main() {
         data t = q.front();
         q.pop_front();
         for(int i=0; i<4; i++) {
-            if(t.x + dx[i] < n && t.x + dx[i] >= 0 && t.y + dy[i] < n && t.y + dy >= 0 && \
+            if(t.x + dx[i] < n && t.x + dx[i] >= 0 && t.y + dy[i] < n && t.y + dy[i] >= 0 && \
                     (cache[t.x + dx[i]][t.y + dy[i]] == -1 || \
                      t.wall+table[t.x+dx[i]][t.y+dy[i]] < cache[t.x+dx[i]][t.y+dy[i]])) {
                 data a;
