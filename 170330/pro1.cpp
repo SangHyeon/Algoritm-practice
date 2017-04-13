@@ -65,7 +65,7 @@ int main(int argc, char** argv) {
             if(flag)
                 break;
             cnt++;
-        }       
+        }
 		// 이 부분에서 정답을 출력하십시오. Codeground 시스템에서는 C++에서도 printf 사용을 권장하며, cout을 사용하셔도 됩니다.
 		printf("Case #%d\n", test_case);
         cout<<cnt<<endl;

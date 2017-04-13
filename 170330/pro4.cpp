@@ -12,6 +12,8 @@ struct Data {
 
 Data data[300000];
 Data weigt[300000];
+int N;
+int prodo[2];
 
 bool cmp(Data a, Data b) {
     return (a.t > b.t)?true:false;
@@ -19,6 +21,31 @@ bool cmp(Data a, Data b) {
 
 bool cmp2(Data a, Data b) {
     return (a.val < b.val)?true:false;
+}
+
+int cal() {
+    int cnt = 1;
+    int w_size;
+    for(int i=0; i<N-1; i++) {
+        if(i>0 && data[i].t == data[i-1].t) {
+            weigt[i].t = data[i].t;
+            weigt[i].w = data[i].w;
+            weigt[i].val = data[i].val;
+            continue;
+        }
+        if(data[i].t > prodo[0]){
+            cnt++;
+            weigt[i].t = data[i].t;
+            weigt[i].w = data[i].w;
+            weigt[i].val = data[i].val;
+        }
+        else {
+            w_size = i;
+            break;
+        }
+    }
+    sort(weigt, weigt+w_size, cmp2);
+    return cnt;
 }
 
 int main(int argc, char** argv) {
@@ -41,8 +68,6 @@ int main(int argc, char** argv) {
 	scanf("%d", &T);	// Codeground 시스템에서는 C++에서도 scanf 함수 사용을 권장하며, cin을 사용하셔도 됩니다.
 	for(test_case = 1; test_case <= T; test_case++) {
 		// 이 부분에서 알고리즘 프로그램을 작성하십시오. 기본 제공된 코드를 수정 또는 삭제하고 본인이 코드를 사용하셔도 됩니다.
-        int N;
-        int prodo[2];
         int cnt = 1;
         int low;
         int result;
@@ -54,6 +79,7 @@ int main(int argc, char** argv) {
         }
 
         sort(data, data+N-1, cmp);
+        
         int w_size;
         for(int i=0; i<N-1; i++) {
             if(i>0 && data[i].t == data[i-1].t) {
